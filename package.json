@@ -1,6 +1,9 @@
 {
   "name": "requisitos-front-end",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.13.1"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
