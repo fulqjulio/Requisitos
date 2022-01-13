@@ -1,0 +1,51 @@
+<div align="center">
+    <br>
+    <br>
+    <div class="col-md-8 border border-secondary p-5 rounded">
+        <h1>Solicitud de modificación</h1>
+        <br>
+        <br>
+        <form enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-6 text-left">
+                    <label>Nombre asignatura</label>
+                    <input class="form-control" value="Nombre asignatura">
+                </div>
+
+                <div class="form-group col-md-6 text-left">
+                    <label>Nivel</label>
+                    <select class="form-control">
+                        <option>Pregrado</option>
+                        <option>Postgrado</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6 text-left">
+                    <label>Subir archivos necesarios: </label>
+                    <input type="file" class="form-control" name="Subir archivos">
+                </div>
+            </div>
+            <div class="form-group text-left">
+                <label>Motivo</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <br>
+            <a role="button" class="btn btn-primary mr-2" (click)="open(contenido)">ENVIAR</a>
+            <a href="" role="button" class="btn btn-outline-danger">CANCELAR</a>
+        </form>
+
+    </div>
+</div>
+
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+    </div>
+    <div class="modal-body">
+        <h6>
+            SOLICITUD ENVIADA CON ÉXITO
+        </h6>
+    </div>
+    <div class="modal-footer">
+        <a role="button" class="btn btn-secondary" (click)="modal.close()" href="" data-dismiss="modal">Cerrar</a>
+    </div>
+</ng-template>
+

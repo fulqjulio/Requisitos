@@ -1,0 +1,70 @@
+<div align="center">
+    <br>
+    <br>
+    <div class="col-md-8 border border-secondary p-5 rounded">
+        <h1>Detalle solicitud</h1>
+        <br>
+        <br>
+        <form>
+            <div class="form-row">
+
+                <div class="form-group col-md-6 text-left">
+                    <label>Fecha</label>
+                    <input type="date" class="form-control" value="07-12-2022" disabled="disabled">
+                </div>
+                <div class="form-group col-md-6 text-left">
+                    <label>Docente</label>
+                    <input class="form-control" value="Rodrigo" disabled="disabled">
+                </div>
+
+                <div class="form-group col-md-6 text-left">
+                    <label>Nombre asignatura</label>
+                    <input class="form-control" value="Introducción a la Robótica (3009151)" disabled="disabled">
+                </div>
+                <div class="form-group col-md-6 text-left">
+                    <label>Nivel</label>
+                    <input class="form-control" value="Pregrado" disabled="disabled">
+                </div>
+
+                <div class="form-group col-md-12 text-left">
+                    <label>Motivo</label>
+                    <textarea class="form-control" rows="3" value="" disabled="disabled">NO TIENE CONTENIDO.</textarea>
+                </div>
+                <br>
+            </div>
+        </form>
+        <br>
+        <a (click)="open(contenido)" role="button" class="btn btn-primary mr-2">APROBAR</a>
+        <a (click)="open(contenido2)" role="button" class="btn btn-danger mr-2">RECHAZAR</a>
+        <a href="ListaSolicitudesDirector" role="button" class="btn btn-outline-danger">VOLVER</a>
+        
+    </div>
+</div>
+
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+    </div>
+    <div class="modal-body">
+        <h6>
+            LA SOLICITUD HA SIDO APROBADA Y ENVIADA AL  COMITÉ EXITOSASMENTE
+        </h6>
+    </div>
+    <div class="modal-footer">
+        <a role="button" class="btn btn-secondary" (click)="modal.close()" href="ListaSolicitudesDirector"
+            data-dismiss="modal">Cerrar</a>
+    </div>
+</ng-template>
+
+<ng-template #contenido2 let-modal>
+    <div class="modal-header">
+    </div>
+    <div class="modal-body">
+        <h6>
+            LA SOLICITUD HA SIDO RECHAZADA
+        </h6>
+    </div>
+    <div class="modal-footer">
+        <a role="button" class="btn btn-secondary" (click)="modal.close()" href="ListaSolicitudesDirector"
+            data-dismiss="modal">Cerrar</a>
+    </div>
+</ng-template>

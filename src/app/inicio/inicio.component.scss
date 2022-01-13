@@ -1,0 +1,30 @@
+.padre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.padre .imagen{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 93%;
+    height: 100%;
+    opacity: 0.65;
+}
+.hijo{
+    margin-top: 10%;
+    width: 40%;
+    height: 30%;
+    z-index: 3;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    padding: 20px;
+}
+
+.hijo .escudo{
+    width: 25%;
+    margin: auto;
+}

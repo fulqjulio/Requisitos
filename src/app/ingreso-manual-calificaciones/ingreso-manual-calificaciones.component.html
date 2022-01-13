@@ -1,0 +1,65 @@
+<br>
+<br>
+<div align='center'>
+    <div class="col-md-8 border border-secondary p-5 rounded">
+        <h1 align='center'>Ingreso manual de calificaciones</h1>
+        <br>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">NOMBRE</th>
+                    <th scope="col">QUIZ 1 (20%)</th>
+                    <th scope="col">SEGUIMIENTO (60%)</th>
+                    <th scope="col">QUIZ 2 (20%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">100345884</th>
+                    <td>Marlon Valencia</td>
+                    <td><input class="form-control" type="number"></td>
+                    <td><input class="form-control" type="number"></td>
+                    <td><input class="form-control" type="number"></td>
+                </tr>
+                <tr>
+                    <th scope="row">1004344543</th>
+                    <td>Kevin Arias</td>
+                    <td><input class="form-control" type="number"></td>
+                    <td><input class="form-control" type="number"></td>
+                    <td><input class="form-control" type="number"></td>
+                </tr>
+                <tr>
+                    <th scope="row">1003486038</th>
+                    <td>Sebastián Escobar</td>
+                    <td><input class="form-control" type="number"></td>
+                    <td><input class="form-control" type="number"></td>
+                    <td><input class="form-control" type="number"></td>
+                </tr>
+                <tr>
+                    <th scope="row">1009083647</th>
+                    <td>Elizabeth Alzate</td>
+                    <td><input class="form-control" type="number"></td>
+                    <td><input class="form-control" type="number"></td>
+                    <td><input class="form-control" type="number"></td>
+                </tr>
+            </tbody>
+        </table>
+        <a role="button" class="btn btn-primary mr-2" (click)="open(contenido)">GUARDAR</a>
+        <a href="ListaGruposVinculados" role="button" class="btn btn-outline-danger">CANCELAR</a>
+    </div>
+</div>
+
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+    </div>
+    <div class="modal-body">
+        <h6>
+            INGRESO DE NOTAS EXITOSO
+        </h6>
+    </div>
+    <div class="modal-footer">
+        <a href="ListaGruposVinculados" role="button" class="btn btn-secondary" (click)="modal.close()" data-dismiss="modal">Cerrar</a>
+    </div>
+</ng-template>

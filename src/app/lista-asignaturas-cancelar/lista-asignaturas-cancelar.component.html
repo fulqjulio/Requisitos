@@ -1,0 +1,85 @@
+<br>
+<br>
+<h1>Listado de asignaturas</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ASIGNATURA</th>
+      <th scope="col">TIPOLOGÍA</th>
+      <th scope="col">CRÉDITOS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="customCheck1">
+          <label class="custom-control-label" for="customCheck1">Introducción a la Robótica (3009151)</label>
+        </div>
+      </th>
+      <td>Disciplinar Optativa</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="customCheck2">
+          <label class="custom-control-label" for="customCheck2">SISTEMAS COMPLEJOS (3007872)</label>
+        </div>
+      </th>
+      <td>Disciplinar Optativa</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="customCheck3">
+          <label class="custom-control-label" for="customCheck3">DISEÑO Y CONSTRUCCIÓN DE PRODUCTOS DE SOFTWARE
+            (3007850)</label>
+        </div>
+      </th>
+      <td>Disciplinar Optativa</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="customCheck4">
+          <label class="custom-control-label" for="customCheck4">INVESTIGACIÓN DE OPERACIONES II (3007325)</label>
+        </div>
+      </th>
+      <td>Disciplinar Optativa</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="customCheck5">
+          <label class="custom-control-label" for="customCheck5">INTRODUCCIÓN AL ANÁLISIS DE DECISIONES
+            (3007322)</label>
+        </div>
+      </th>
+      <td>Disciplinar Optativa</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<div align='center'>
+  <a class="btn btn-primary mr-2" role="button" (click)="open(contenido)">CONSOLIDAR CANCELACIÓN</a>
+  <a role="button" class="btn btn-outline-danger" href="PlanInscripcionCancelacion">VOLVER</a>
+</div>
+
+
+<ng-template #contenido let-modal>
+  <div class="modal-header">
+  </div>
+  <div class="modal-body">
+      <h6>
+          CANCELACIÓN EXITOSA
+      </h6>
+  </div>
+  <div class="modal-footer">
+      <a role="button" class="btn btn-secondary" (click)="modal.close()" href="" data-dismiss="modal">Cerrar</a>
+  </div>
+</ng-template>
