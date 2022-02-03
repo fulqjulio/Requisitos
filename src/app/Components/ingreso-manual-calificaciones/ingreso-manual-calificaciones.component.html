@@ -1,0 +1,64 @@
+<br>
+<br>
+<div align='center'>
+    <div class="col-md-8 border border-secondary p-5 rounded">
+        <h1 align='center'>Ingreso manual de calificaciones</h1>
+        <br>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">NOMBRE</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody> 
+                <tr *ngFor="let calificacion of Calificaciones">
+                    <th scope="row">{{ calificacion.identificacion }}</th>
+                    <td>{{ calificacion.nombre_completo }}</td>
+                    <td><a role="button" class="btn btn-primary mr-2" (click)="open2(contenido2)" style="color: white; cursor: pointer;">INGRESAR</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <a (click)="Back()" role="button" class="btn btn-outline-danger" style="color: tomato;cursor: pointer;">CANCELAR</a>
+    </div>
+</div>
+
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+    </div>
+    <div class="modal-body">
+        <h6>
+            INGRESO DE NOTAS EXITOSO
+        </h6>
+    </div>
+    <div class="modal-footer">
+        <a  role="button" class="btn btn-secondary" (click)="modal.close()" (click)="Back()" data-dismiss="modal">Cerrar</a>
+    </div>
+</ng-template>
+
+<ng-template #contenido2 let-modal>
+    <div class="modal-header">
+    </div>
+    <div class="modal-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" *ngFor="let actividad of Actividades">{{ actividad.nombre }}  ({{actividad.porcentaje}}%)</th>
+                </tr>
+            </thead>
+            <tbody> 
+                <tr>
+                    <td *ngFor="let actividad of Actividades"><input class="form-control" type="number" value=""></td>
+                </tr>
+            </tbody>
+        </table>
+        <div align="center">
+            <td><a role="button" class="btn btn-primary mr-2" (click)="open(contenido)" (click)="modal.close()" style="color: white; cursor: pointer;">GUARDAR</a></td>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a  role="button" class="btn btn-secondary" (click)="modal.close()" data-dismiss="modal">Cerrar</a>
+    </div>
+</ng-template>

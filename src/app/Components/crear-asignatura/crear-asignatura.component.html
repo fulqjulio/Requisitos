@@ -1,0 +1,143 @@
+<div align="center">
+    <br>
+    <br>
+    <div class="col-md-8 border border-secondary p-5 rounded">
+        <h1>Creación de asignatura</h1>
+        <br>
+        <br>
+        <form>
+            <div class="form-row">
+
+                <div class="form-group col-md-6 text-left">
+                    <label>Nivel</label>
+                    <select class="form-control" [formControl]="nivel">
+                        <option value="pregrado">Pregrado</option>
+                        <option value="postgrado">Postgrado</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6 text-left">
+                    <label>Departamento</label>
+                    <select class="form-control" [formControl]="departamento">
+                        <option value="Ciencias de la computación y de la decisión">Ciencias de la computación y de la
+                            decisión</option>
+                        <option value="Materiales y minerales">Materiales y minerales</option>
+                        <option value="Ingeniería de la organización">Ingeniería de la organización</option>
+                        <option value="Ingeniería eléctrica y automática">Ingeniería eléctrica y automática</option>
+                        <option value="Ingeniería civil">Ingeniería civil</option>
+                        <option value="Procesos y energía">Procesos y energía</option>
+                        <option value="Ingeniería mecánica">Ingeniería mecánica</option>
+                        <option value="Geociencias y medio ambiente">Geociencias y medio ambiente</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6 text-left">
+                    <label>Nombre</label>
+                    <input class="form-control" [formControl]="nombre">
+                </div>
+                <div class="form-group col-md-6 text-left">
+                    <label>Código</label>
+                    <input class="form-control" [formControl]="codigo">
+                </div>
+
+                <div class="form-group col-md-6 text-left">
+                    <label>Horas actividad presencial</label>
+                    <input class="form-control" [formControl]="horas_actividad_presencial">
+                </div>
+                <div class="form-group col-md-6 text-left">
+                    <label>Horas actividad autónomas</label>
+                    <input class="form-control" [formControl]="horas_actividad_autonomas">
+                </div>
+
+                <div class="form-group col-md-6 text-left">
+                    <label>Plan de estudios</label>
+                    <select class="form-control" [formControl]="plan_de_estudios">
+                        <option value="3533">3533 INGENIERÍA DE PETRÓLEOS</option>
+                        <option value="3534">3534 INGENIERÍA DE SISTEMAS E INFORMÁTICA</option>
+                        <option value="3539">3539 INGENIERÍA QUÍMICA</option>
+                        <option value="3536">3536 INGENIERÍA GEOLÓGICA</option>
+                        <option value="3532">3532 INGENIERÍA DE MIANS Y METALURGIA</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6 text-left">
+                    <label>Validable</label>
+                    <select class="form-control" [formControl]="validable">
+                        <option value="1">SI</option>
+                        <option value="2">NO</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6 text-left">
+                    <label>Porcentaje de asistencia</label>
+                    <input class="form-control" [formControl]="porcentaje_de_asistencia">
+                </div>
+                <div class="form-group col-md-6 text-left">
+                    <label>Tipología</label>
+                    <select class="form-control" [formControl]="tipologia">
+                        <option value="FUNDAMENTACIÓN OBLIGATORIA">FUNDAMENTACIÓN OBLIGATORIA</option>
+                        <option value="FUNDAMENTACIÓN OPTATIVA">FUNDAMENTACIÓN OPTATIVA</option>
+                        <option value="DISCIPLINAR OBLIGATORIA">DISCIPLINAR OBLIGATORIA</option>
+                        <option value="DISCIPLINAR OPTATIVA">DISCIPLINAR OPTATIVA</option>
+                        <option value="NIVELACIÓN">NIVELACIÓN</option>
+                        <option value="LIBRE ELECCIÓN">LIBRE ELECCIÓN</option>
+                        <option value="TRABAJO DE GRADO">TRABAJO DE GRADO</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group text-left">
+                <label>Contenido</label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group col-md-6 text-left">
+                    <label>Código requisito</label>
+                    <input class="form-control" [formControl]="codigo_requisitos">
+                </div>
+
+                <div class="form-group col-md-6 text-left">
+                    <label>Tipo requisito</label>
+                    <select class="form-control" [formControl]="tipo_requisitos">
+                        <option value="prerrequisito">Prerrequisito</option>
+                        <option value="correquisito">Correquisito</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group text-left">
+                <label>Descripción</label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group text-left">
+                <label>Objetivos</label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group text-left">
+                <label>Metodología de la actividad académica</label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group text-left">
+                <label>Bibliografía</label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <br>
+
+            <button role="button" class="btn btn-primary ali mr-2" (click)="summit(contenido)">CREAR</button>
+            <a (click)="Back()" role="button" class="btn btn-outline-danger" style="color: tomato;">VOLVER</a>
+
+        </form>
+
+    </div>
+</div>
+
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+    </div>
+    <div class="modal-body">
+        <h6>
+            CREACIÓN DE ASIGNATURA EXITOSA
+        </h6>
+    </div>
+    <div class="modal-footer">
+        <a role="button" class="btn btn-secondary" (click)="modal.close()" data-dismiss="modal">Cerrar</a>
+    </div>
+</ng-template>

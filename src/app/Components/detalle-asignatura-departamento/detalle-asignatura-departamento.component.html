@@ -1,0 +1,139 @@
+<div align="center">
+    <br>
+    <br>
+    <div class="col-md-8 border border-secondary p-5 rounded">
+        <h1>Detalle asignatura</h1>
+        <br>
+        <br>
+        <form>
+            <div class="form-row">
+
+                <div class="form-group col-md-6 text-left">
+                    <label>Nivel</label>
+                    <select class="form-control" disabled="disabled">
+                        <option>{{ Asignatura[0].nivel }}</option>
+                        <option></option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6 text-left">
+                    <label>Departamento</label>
+                    <select class="form-control" disabled="disabled">
+                        <option>{{ Asignatura[0].departamento }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6 text-left">
+                    <label>Nombre</label>
+                    <input class="form-control" value="{{ Asignatura[0].nombre }}" disabled="disabled">
+                </div>
+                <div class="form-group col-md-6 text-left">
+                    <label>Código</label>
+                    <input class="form-control" value="{{ Asignatura[0].codigo }}" disabled="disabled">
+                </div>
+
+                <div class="form-group col-md-6 text-left">
+                    <label>Horas actividad presencial</label>
+                    <input class="form-control" value="{{ Asignatura[0].horas_actividad_presencial }}"
+                        disabled="disabled">
+                </div>
+                <div class="form-group col-md-6 text-left">
+                    <label>Horas actividad autónomas</label>
+                    <input class="form-control" value="{{ Asignatura[0].horas_actividad_autonomas }}"
+                        disabled="disabled">
+                </div>
+
+                <div class="form-group col-md-6 text-left">
+                    <label>Plan de estudios</label>
+                    <select class="form-control" disabled="disabled">
+                        <option>{{ Asignatura[0].plan_de_estudios }}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6 text-left">
+                    <label>Validable</label>
+                    <select class="form-control" disabled="disabled">
+                        <option>{{ Asignatura[0].validable }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6 text-left">
+                    <label>Porcentaje de asistencia</label>
+                    <input class="form-control" value="{{ Asignatura[0].porcentaje_de_asistencia }}"
+                        disabled="disabled">
+                </div>
+                <div class="form-group col-md-6 text-left">
+                    <label>Tipología</label>
+                    <select class="form-control" disabled="disabled">
+                        <option>{{ Asignatura[0].tipologia }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group text-left">
+                <label>Contenido</label>
+                <textarea class="form-control" rows="3"
+                    disabled="disabled">{{ Asignatura[0].contenido }}</textarea>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <h2>Grupos</h2>
+            <br>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">N°</th>
+                        <th scope="col">DOCENTE</th>
+                        <th scope="col">NÚMERO DE CUPOS</th>
+                        <th scope="col">SALÓN</th>
+                        <th scope="col">HORARIO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let grupo of ListaGruposVinculados">
+                        <th scope="row">{{ grupo.numero_grupo }}</th>
+                        <td>{{ grupo.nombre_completo }}</td>
+                        <td>{{ grupo.numero_de_cupos }}</td>
+                        <td>{{ grupo.salon }}</td>
+                        <td>{{ grupo.dias }} {{ grupo.hora_inicio }}-{{ grupo.hora_final }}</td>
+                        <td>
+                            <a (click)="definirHorario(grupo.id)" role="button" class="btn btn-danger" style="color: white;">DEFINIR HORARIO</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <button (click)="crearGrupo()" role="button" class="btn btn-primary">CREAR GRUPO</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <br>
+            <div *ngIf="en_oferta == 'disabled'">
+                <h4>La aignatura se encuentra en oferta.</h4>
+                <br>
+            </div>
+            <button role="button" class="btn btn-primary mr-2" (click)="open(contenido)" [disabled]=en_oferta >SOLICITAR PUBLICACIÓN</button>
+            <a (click)="Back()" role="button" class="btn btn-outline-danger"
+                style="color: tomato; cursor: pointer;">VOLVER</a>
+        </form>
+
+    </div>
+</div>
+
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+    </div>
+    <div class="modal-body">
+        <h6>
+            SOLICITUD REALIZADA
+        </h6>
+    </div>
+    <div class="modal-footer">
+        <a role="button" class="btn btn-secondary" (click)="modal.close()" href="" data-dismiss="modal">Cerrar</a>
+    </div>
+</ng-template>

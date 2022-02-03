@@ -1,0 +1,64 @@
+<br>
+<br>
+<div align="center">
+    <div class="col-md-6 border border-secondary p-5 rounded">
+        <h1>Generar solicitud de cupo</h1>
+        <br>
+        <form>
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Código asignatura</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" [formControl]="codigo" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Grupo</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" [formControl]="grupo" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="exampleFormControlTextarea1" class="col-sm-2 col-form-label">Motivo</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [formControl]="motivo"
+                        required></textarea>
+                </div>
+            </div>
+        </form>
+
+        <a class="btn btn-primary mr-2" role="button" (click)="summit(contenido, contenido2)"
+            style="color: white;cursor: pointer;">ENVIAR</a>
+        <a role="button" class="btn btn-outline-danger" (click)="Back()" style="color: tomato;">CANCELAR</a>
+    </div>
+</div>
+
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+    </div>
+    <div class="modal-body">
+        <h6>
+            SOLICITUD ENVIADA CON ÉXITO
+        </h6>
+        <h6>
+            ASIGNATURA: {{ Respuesta[0].nombre }}
+        </h6>
+    </div>
+    <div class="modal-footer">
+        <a role="button" class="btn btn-secondary" (click)="modal.close()" (click)="Back()" data-dismiss="modal"
+            style="cursor: pointer;">Cerrar</a>
+    </div>
+</ng-template>
+
+<ng-template #contenido2 let-modal>
+    <div class="modal-header">
+    </div>
+    <div class="modal-body">
+        <h6>
+            ASIGNATURA NO ENCONTRADA.
+        </h6>
+    </div>
+    <div class="modal-footer">
+        <a role="button" class="btn btn-secondary" (click)="modal.close()" data-dismiss="modal"
+            style="cursor: pointer;">Cerrar</a>
+    </div>
+</ng-template>

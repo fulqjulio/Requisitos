@@ -1,0 +1,36 @@
+<br>
+<br>
+<div align='center'>
+    <div class="col-md-8 border border-secondary p-5 rounded">
+        <h1 align='center'>Listado de grupos vinculados</h1>
+        <br>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">N°</th>
+                    <th scope="col">NÚMERO DE CUPOS</th>
+                    <th scope="col">SALÓN</th>
+                    <th scope="col">HORARIO</th>
+                    <th scope="col">OPCIONES DE INGRESO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let grupo of ListaGruposVinculados">
+                    <th scope="row">{{ grupo.numero_grupo }}</th>
+                    <td>{{ grupo.numero_de_cupos }}</td>
+                    <td>{{ grupo.salon }}</td>
+                    <td>{{ grupo.dias }}, {{ grupo.hora_inicio }}-{{ grupo.hora_final }}</td>
+                    <td>
+                        <a (click)="ingresoManual(grupo.id)" role="button" class="btn btn-primary mr-2" style="color:white; border-color: white;">INGRESO MANUAL</a>
+                        <a (click)="importar()" role="button" class="btn btn-primary mr-2" style="color:white; border-color: white;">IMPORTAR</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div align="center">
+            <a role="button" class="btn btn-outline-danger" (click)="Back()" style="cursor: pointer; color: tomato;">VOLVER</a>
+          </div>
+    </div>
+</div>

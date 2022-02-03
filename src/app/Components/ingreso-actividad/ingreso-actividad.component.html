@@ -1,0 +1,43 @@
+<div align="center">
+    <br>
+    <br>
+    <div class="col-md-8 border border-secondary p-5 rounded">
+        <h1>Ingreso actividad</h1>
+        <br>
+        <br>
+        <form>
+            <div class="form-row">
+
+                <div class="form-group col-md-6 text-left">
+                    <label>Nombre</label>
+                    <input class="form-control" [formControl]="nombre">
+                </div>
+                <div class="form-group col-md-6 text-left">
+                    <label>Porcentaje</label>
+                    <input class="form-control" [formControl]="porcentaje">
+                </div>
+
+            </div>
+        </form>
+        <div align="center">
+            <a style="border-color: white;color: white;" role="button" class="btn btn-primary mr-2"
+                (click)="Summit(contenido)">CREAR</a>
+            <a role="button" class="btn btn-outline-danger" (click)="Back()" style="cursor: pointer;color: tomato;">VOLVER</a>
+        </div>
+    </div>
+
+</div>
+
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+    </div>
+    <div class="modal-body">
+        <h6>
+            ACTIVIDAD(ES) INGRESADA(S)
+        </h6>
+    </div>
+    <div class="modal-footer">
+        <a role="button" class="btn btn-secondary" (click)="modal.close()" style="cursor: pointer;"
+            data-dismiss="modal">Cerrar</a>
+    </div>
+</ng-template>

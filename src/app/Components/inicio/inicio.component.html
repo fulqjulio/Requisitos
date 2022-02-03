@@ -1,0 +1,39 @@
+<br>
+<br>
+<div class="padre" align="center">
+
+    <div class="col-md-6 border border-secondary p-5 rounded">
+        <h1>Iniciar Sesión</h1>
+        <br>
+        <br>
+        <form>
+            <div class="form align">
+
+                <div class="form-group col-md-6 text-left">
+                    <input class="form-control" placeholder="Usuario" [formControl]="nombre_usuario" required="required">
+                </div>
+                <div class="form-group col-md-6 text-left">
+                    <input type="password" class="form-control" placeholder="Contraseña" [formControl]="contrasena" required="required">
+                </div>
+
+            </div>
+            <br>
+            <a role="button" type="Summit" class="btn btn-primary mr-2 " style="color:white; border-color: white;"
+                (click)="Summit(contenido)">INGRESAR</a>
+        </form>
+    </div>
+</div>
+
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+    </div>
+    <div class="modal-body">
+        <h6>
+            USUARIO O CONTRASEÑA INCORRECTOS.
+        </h6>
+    </div>
+    <div class="modal-footer">
+        <a role="button" class="btn btn-secondary" (click)="modal.close()" style="cursor: pointer;"
+            data-dismiss="modal">Cerrar</a>
+    </div>
+</ng-template>

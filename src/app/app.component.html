@@ -120,10 +120,23 @@
 
 
 
+
     <!-- Main menu -->
     <div class="navbar-dark mainMenu" id="main_menu_container">
       <!-- Items menú principal -->
-      <div class="btn-group">
+      <div class="btn-group" *ngIf="service.getPerfil()??''!=''">
+        <div class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{ this.service.getCurrentUser() }}<span
+            class="caret"></span>
+        </div>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" style="cursor: pointer; color: white;" (click)="Logout()">Cerrar Sesión</a>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="btn-group" *ngIf="service.getPerfil()=='estudiante'">
         <div class="btn btn-default dropdown-toggle" data-toggle="dropdown">Estudiante<span class="caret"></span>
         </div>
         <ul class="dropdown-menu">
@@ -142,7 +155,7 @@
         </ul>
       </div>
 
-      <div class="btn-group">
+      <div class="btn-group" *ngIf="service.getPerfil()=='docente'">
         <div class="btn btn-default dropdown-toggle" data-toggle="dropdown">Docente<span class="caret"></span>
         </div>
         <ul class="dropdown-menu">
@@ -153,13 +166,13 @@
             <a class="dropdown-item" routerLink='IngresarCalificaciones'>Ingresar Calificaciones</a>
           </li>
           <li>
-            <a class="dropdown-item" (click)="open(contenido)" href="#">Diligenciar solicitud de creación o
+            <a class="dropdown-item" (click)="open(contenido)" style="cursor: pointer; color: white;">Diligenciar solicitud de creación o
               modificación de asignatura</a>
           </li>
         </ul>
       </div>
 
-      <div class="btn-group">
+      <div class="btn-group" *ngIf="service.getPerfil()=='departamento'">
         <div class="btn btn-default dropdown-toggle" data-toggle="dropdown">Departamento<span class="caret"></span>
         </div>
         <ul class="dropdown-menu">
@@ -172,7 +185,7 @@
         </ul>
       </div>
 
-      <div class="btn-group">
+      <div class="btn-group" *ngIf="service.getPerfil()=='profesional'">
         <div class="btn btn-default dropdown-toggle" data-toggle="dropdown">Profesional Universitario<span
             class="caret"></span>
         </div>
@@ -186,7 +199,7 @@
         </ul>
       </div>
 
-      <div class="btn-group">
+      <div class="btn-group" *ngIf="service.getPerfil()=='secretario'">
         <div class="btn btn-default dropdown-toggle" data-toggle="dropdown">Secretario<span class="caret"></span>
         </div>
         <ul class="dropdown-menu">
@@ -199,7 +212,7 @@
         </ul>
       </div>
 
-      <div class="btn-group">
+      <div class="btn-group" *ngIf="service.getPerfil()=='comite'">
         <div class="btn btn-default dropdown-toggle" data-toggle="dropdown">Comité asesor<span class="caret"></span>
         </div>
         <ul class="dropdown-menu">
@@ -210,7 +223,7 @@
         </ul>
       </div>
 
-      <div class="btn-group">
+      <div class="btn-group" *ngIf="service.getPerfil()=='consejo'">
         <div class="btn btn-default dropdown-toggle" data-toggle="dropdown">Consejo de facultad<span
             class="caret"></span>
         </div>
@@ -222,7 +235,7 @@
         </ul>
       </div>
 
-      <div class="btn-group">
+      <div class="btn-group" *ngIf="service.getPerfil()=='director'">
         <div class="btn btn-default dropdown-toggle" data-toggle="dropdown">Director área cirricular<span
             class="caret"></span>
         </div>
@@ -356,9 +369,9 @@
     <h4>TIPO DE SOLICITUD</h4>
   </div>
   <div class="modal-body" align="center">
-    <a role="button" class="btn btn-primary mr-2" (click)="modal.close()" href="CrearSolicitudAsignatura"
+    <a role="button" class="btn btn-primary mr-2" (click)="modal.close()" (click)="selectTipo('Creación')" style="cursor: pointer;color: white;"
       data-dismiss="modal">CREAR</a>
-    <a role="button" class="btn btn-primary" (click)="modal.close()" href="ModificarSolicitudAsignatura"
+    <a role="button" class="btn btn-primary" (click)="modal.close()" (click)="selectTipo('Modificación')" style="cursor: pointer;color: white;"
       data-dismiss="modal">MODIFICAR</a>
     <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">x</button>
   </div>
