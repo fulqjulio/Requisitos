@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 export class LoginService {
 
   public headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE' });
-  public BASE_URL = "http://localhost:8000/";
+  public BASE_URL = "http://requisitos-back-end.herokuapp.com/";
   public current_user: string;
   public user_id: string;
   public fullname: string;
